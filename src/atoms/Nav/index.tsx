@@ -1,15 +1,21 @@
-import React from "react";
+
 import "./NavTabs.scss";
 type tabProps = {
-  tabs?: Array<String>;
-  tab?: number;
-  setTab?: Function;
+  tabs: Array<String>;
+  active?: number;
+  setActive: Function;
 };
-const NavTab = ({ tabs, tab, setTab }: tabProps) => {
+const NavTab = ({ tabs, active, setActive }: tabProps) => {
   return (
     <div className="nav__container">
-      {tabs?.map((tab, index) => (
-        <div key={`tab${index}`} className={`single__tab`}>
+      {tabs.map((tab, index) => (
+        <div
+          key={`tab${index}`}
+          className={`cursor-pointer ${active == index ? "single__tab" : " "}`}
+          onClick={() => {
+            setActive(index);
+          }}
+        >
           {tab}
         </div>
       ))}
@@ -18,3 +24,6 @@ const NavTab = ({ tabs, tab, setTab }: tabProps) => {
 };
 
 export default NavTab;
+function setActive(active: number | undefined): void {
+  throw new Error("Function not implemented.");
+}

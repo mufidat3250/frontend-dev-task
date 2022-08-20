@@ -1,3 +1,11 @@
 .nav__container {
   @apply flex justify-between text-gray300 text-[1.25rem] border-b-[1px] border-[#000000] pb-[1.1875rem] relative;
 }
+.single__tab {
+  @apply relative cursor-pointer text-orange300 font-[700];
+
+  &::after {
+    content: "";
+    @apply absolute h-[12px] rounded-[10px] w-full bg-orange400 left-0 top-[2.35rem];
+  }
+}
