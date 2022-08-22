@@ -20,6 +20,7 @@ const CVV = ({ title, star, value, onchange }: cvv) => {
           value={value}
           onChange={onchange}
           maxLength={3}
+          required
         />
       </div>
     </div>
