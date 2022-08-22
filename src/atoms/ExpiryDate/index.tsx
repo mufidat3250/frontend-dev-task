@@ -1,5 +1,13 @@
 import "./ExpiryDate.scss";
-const ExpiryDate = ({ title, star }: { title: string; star: boolean }) => {
+
+type expireDateProp = {
+  title: string;
+  star: boolean;
+  onchange: (value: any) => void;
+  value: string | undefined;
+};
+
+const ExpiryDate = ({ title, star, value, onchange }: expireDateProp) => {
   return (
     <div className="expiry__container">
       <div className="expiry__title">
@@ -7,11 +15,13 @@ const ExpiryDate = ({ title, star }: { title: string; star: boolean }) => {
         {star && <span className=" text-sm text-red font-bold ml-1">*</span>}
       </div>
       <div className="inputs_container">
-        <input type="text" maxLength={2} pattern="\d*" placeholder="04" />
-        <p className="flex justify-center items-center text-sm font-normal">
-          /
-        </p>
-        <input type="number" maxLength={2} pattern="\d*" placeholder="23" />
+        <input
+          type="text"
+          maxLength={5}
+          placeholder="04/23"
+          value={value}
+          onChange={onchange}
+        />
       </div>
     </div>
   );

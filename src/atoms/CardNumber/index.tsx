@@ -20,6 +20,7 @@ const CardNumber = ({ title, star, value, onchange }: cardNumberProp) => {
           placeholder="44960  44960  44960  44960"
           value={value}
           onChange={onchange}
+          maxLength={28}
         />
       </div>
     </div>

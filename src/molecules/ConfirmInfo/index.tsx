@@ -5,10 +5,6 @@ import { useNavigate } from "react-router-dom";
 
 const ConfirmInfo = () => {
   let navigate = useNavigate();
-  const handleClick = () => {
-    console.log("i am clicked");
-  };
-
   return (
     <div>
       <div className="confirmInfo__container">
@@ -17,7 +13,7 @@ const ConfirmInfo = () => {
           <div className="heading">
             <h2>Item Name</h2>
             <div className=" flex space-x-[0.6568rem]">
-              <img src="/public/vectors/naira.svg" alt="" /> <h2>Price</h2>
+              <img src="/vectors/naira.svg" alt="" /> <h2>Price</h2>
             </div>
           </div>
         </div>
@@ -55,7 +51,6 @@ const ConfirmInfo = () => {
           <Button
             title="Cancel Payment"
             otherClass={`!bg-none py-[0.678rem] !text-purple500`}
-            onClick={() => handleClick()}
           />
         </div>
       </div>

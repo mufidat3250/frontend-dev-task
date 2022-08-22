@@ -1,6 +1,12 @@
 import React from "react";
 import "./Cvv.scss";
-const CVV = ({ title, star }: { title: string; star: boolean }) => {
+type cvv = {
+  title: string;
+  star: boolean;
+  value: string;
+  onchange: (value: any) => void;
+};
+const CVV = ({ title, star, value, onchange }: cvv) => {
   return (
     <div className=" cvv__container">
       <div className="cvv__title">
@@ -8,7 +14,13 @@ const CVV = ({ title, star }: { title: string; star: boolean }) => {
         {star && <span className=" text-sm text-red font-bold ml-1">*</span>}
       </div>
       <div className="flex">
-        <input type="text" placeholder="923" />
+        <input
+          type="text"
+          placeholder="923"
+          value={value}
+          onChange={onchange}
+          maxLength={3}
+        />
       </div>
     </div>
   );

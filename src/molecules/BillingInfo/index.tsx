@@ -6,12 +6,19 @@ import ExpiryDate from "../../atoms/ExpiryDate";
 import Input from "../../atoms/Input";
 import Select from "../../atoms/Select";
 
-type formFieldProp = "cardName" | "cardNumber" | "cardType";
+type formFieldProp =
+  | "cardName"
+  | "cardNumber"
+  | "cardType"
+  | "expiryDate"
+  | "cvv";
 const BillingInfo = ({ handleSubmit }: { handleSubmit: any }) => {
   const [form, setForm] = useState({
     cardName: "",
     cardNumber: "",
     cardType: "",
+    expiryDate: "",
+    cvv: "",
   });
 
   const handleChange = (formField: formFieldProp, e: any) => {
@@ -31,6 +38,15 @@ const BillingInfo = ({ handleSubmit }: { handleSubmit: any }) => {
       creditCard.push(nT);
     });
     return creditCard.join("");
+  };
+
+  const handleExpireDate = () => {
+    let value = form.expiryDate;
+    let expireDate = value.replace(/\D+/g, "");
+    console.log(expireDate);
+    if (expireDate.length > 2) {
+      return value.slice(0, 2) + "/" + value.slice(3, 5);
+    }
   };
 
   console.log(form.cardNumber);
@@ -65,11 +81,21 @@ const BillingInfo = ({ handleSubmit }: { handleSubmit: any }) => {
           />
         </div>
         <div>
-          <ExpiryDate title={"Expiry date"} star={true} />
+          <ExpiryDate
+            title={"Expiry date"}
+            star={true}
+            value={handleExpireDate()}
+            onchange={(e: React.ChangeEvent) => handleChange("expiryDate", e)}
+          />
         </div>
         <div className="w-[6.5rem]">
           {" "}
-          <CVV title={"CVV"} star={true} />
+          <CVV
+            value={form.cvv}
+            title={"CVV"}
+            star={true}
+            onchange={(e: React.ChangeEvent) => handleChange("cvv", e)}
+          />
         </div>
       </div>
       <div className="flex items-center mt-[5rem] mb-[6.9375rem]">
