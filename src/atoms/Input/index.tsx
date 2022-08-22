@@ -8,6 +8,7 @@ const Input = ({
   value,
   onChange,
   type,
+  required,
 }: {
   title: string;
   subtitle?: string;
@@ -15,6 +16,7 @@ const Input = ({
   star?: boolean;
   value?: string;
   type?: string;
+  required?: boolean;
   onChange?: (value: any) => void;
 }) => {
   return (
@@ -31,6 +33,7 @@ const Input = ({
           placeholder={placeholder}
           value={value}
           onChange={onChange}
+          required={required}
         />
       </div>
     </div>

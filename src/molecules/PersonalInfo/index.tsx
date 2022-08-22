@@ -43,6 +43,7 @@ const PersonalInfo = ({ handleSubmit }: { handleSubmit: any }) => {
           value={form.name}
           onChange={(e: React.ChangeEventHandler) => handleChange("name", e)}
           type="text"
+          
         />
         <Input
           title={"Email Address"}
@@ -51,6 +52,7 @@ const PersonalInfo = ({ handleSubmit }: { handleSubmit: any }) => {
           star={true}
           type="email"
           onChange={(e: React.ChangeEventHandler) => handleChange("email", e)}
+          required={true}
         />
         <Input
           title={"Address 1"}

@@ -57,5 +57,4 @@ const ConfirmInfo = () => {
     </div>
   );
 };
-
 export default ConfirmInfo;

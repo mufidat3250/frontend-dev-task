@@ -21,6 +21,7 @@ const CardNumber = ({ title, star, value, onchange }: cardNumberProp) => {
           value={value}
           onChange={onchange}
           maxLength={28}
+          required={true}
         />
       </div>
     </div>

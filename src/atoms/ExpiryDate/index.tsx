@@ -21,6 +21,7 @@ const ExpiryDate = ({ title, star, value, onchange }: expireDateProp) => {
           placeholder="04/23"
           value={value}
           onChange={onchange}
+          required
         />
       </div>
     </div>
