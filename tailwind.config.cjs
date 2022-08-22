@@ -14,7 +14,10 @@ module.exports = {
         gray2: "#4F4F4F",
         red: "rgba(235, 87, 87, 1)",
       },
+      boxShadow: {
+        "4xxl": " 0px 6px 10px rgba(33, 30, 67, 0.08)",
+      },
     },
   },
-  plugins: [],
+  plugins: ["tailwind-scrollbar-hide"],
 };

@@ -5,11 +5,17 @@ const Input = ({
   subtitle,
   placeholder,
   star,
+  value,
+  onChange,
+  type,
 }: {
   title: string;
   subtitle?: string;
   placeholder: string;
   star?: boolean;
+  value?: string;
+  type?: string;
+  onChange?: (value: any) => void;
 }) => {
   return (
     <div className="input__container">
@@ -19,7 +25,13 @@ const Input = ({
       </div>
       {subtitle && <p className="input__description">{subtitle}</p>}
       <div className="flex">
-        <input type="text" className="input" placeholder={placeholder} />
+        <input
+          type={type || "text"}
+          className="input"
+          placeholder={placeholder}
+          value={value}
+          onChange={onChange}
+        />
       </div>
     </div>
   );

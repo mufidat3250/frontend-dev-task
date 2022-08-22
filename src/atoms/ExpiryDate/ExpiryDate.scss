@@ -1,0 +1,14 @@
+.expiry__container {
+  @apply flex flex-col;
+  .expiry__title {
+    @apply text-sm font-bold mb-[0.6875rem] leading-6 flex;
+  }
+  .inputs_container {
+    @apply grid grid-cols-[1fr,auto,1fr]  border-purple500 border-[1px] rounded-[0.625rem]  overflow-hidden;
+  }
+
+  input {
+    @apply flex flex-grow h-[4rem]  rounded-[0.625rem]  outline-none  w-full
+    text-center;
+  }
+}

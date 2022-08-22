@@ -6,10 +6,6 @@
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
-  /* text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%; */
 }
 
 body {
@@ -17,6 +13,12 @@ body {
   padding: 0;
   height: 100vh;
   overflow-y: auto;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+::placeholder {
+  color: #4f4f4f;
 }
 
 @tailwind utilities;

@@ -1,0 +1,13 @@
+.CardDetailInput__container {
+  @apply flex flex-col;
+  .card__detail__title {
+    @apply text-sm font-bold mb-[0.6875rem] leading-6 flex;
+  }
+
+  .inputs_container {
+    @apply grid grid-cols-1  border-purple500 border-[1px] rounded-[0.625rem]  overflow-hidden;
+  }
+  input {
+    @apply flex flex-grow h-[4rem] pl-[1.6875rem]  outline-none;
+  }
+}
